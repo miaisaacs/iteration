@@ -1,0 +1,26 @@
+---
+title: "Writing Functions"
+author: "Mia Isaacs"
+date: "2024-10-24"
+output: github_document
+---
+
+# load libraries
+
+```{r}
+library(tidyverse)
+library(rvest)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+

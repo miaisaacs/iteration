@@ -211,6 +211,16 @@ nsduh_table <- function(html, table_num, table_name) {
 }
 ```
 
+```{r, error = FALSE}
+source("source/nsduh_table_format.R")
+
+nsduh_results = 
+  bind_rows(
+    nsduh_table(nsduh_html, 1, "marj_one_year"),
+    nsduh_table(nsduh_html, 4, "cocaine_one_year"),
+    nsduh_table(nsduh_html, 5, "heroin_one_year")
+  )
+```
 
 
 

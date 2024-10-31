@@ -168,7 +168,33 @@ sim_results_df |>
   facet_grid(. ~ true_sd)
 ```
 
+```{r}
+bday_sim = function(n) {
+  
+  bdays = sample(1:365, size = n, replace = T)
+  
+  duplicate = length(unique(bdays)) < n
+  
+  return(duplicate)
+  
+}
 
+bday_sim(10)
+```
+
+```{r}
+sim_results_df =
+  expand_grid(
+    n = c(10, 50),
+    iter = 1:10
+  ) |> 
+  mutate(res = map_lgl(n, bday_sim)) |> 
+  group_by(n) |> 
+  summarize(prob = mean(res))
+
+sim_res |> 
+  ggplpt(aes(x = n, y =))
+```
 
 
 
